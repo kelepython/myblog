@@ -60,6 +60,27 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# -- Options for LaTeX output ---------------------------------------------
+
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    'papersize': 'a4paper',
+    # The font size ('10pt', '11pt' or '12pt').
+    'pointsize': '12pt', 'classoptions': ',oneside', 'babel': '',  # 必须
+    'inputenc': '',  # 必须
+    'utf8extra': '',  # 必须
+    # Additional stuff for the LaTeX preamble.
+    'preamble': r"""
+    \usepackage{xeCJK}
+    \usepackage{indentfirst}
+    \setlength{\parindent}{2em}
+    \setCJKmainfont{WenQuanYi Micro Hei}
+    \setCJKmonofont[Scale=0.9]{WenQuanYi Micro Hei Mono}
+    \setCJKfamilyfont{song}{WenQuanYi Micro Hei}
+    \setCJKfamilyfont{sf}{WenQuanYi Micro Hei}
+    \XeTeXlinebreaklocale "zh"
+    \XeTeXlinebreakskip = 0pt plus 1pt"""}
+
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
